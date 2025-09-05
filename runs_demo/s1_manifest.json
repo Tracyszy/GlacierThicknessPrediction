@@ -1,0 +1,34 @@
+{
+  "data_path": "./data/global_clean.csv",
+  "rows": 284558,
+  "n_features": 18,
+  "features": [
+    "latitude",
+    "longitude",
+    "topo",
+    "topo_smoothed",
+    "slope",
+    "slope_factor",
+    "aspect",
+    "dis_from_border",
+    "catchment_area",
+    "millan_v",
+    "glacier_cenlon",
+    "glacier_cenlat",
+    "glacier_reference_mb",
+    "glacier_aar",
+    "glacier_avg_temp",
+    "glacier_avg_prcpsol",
+    "glacier_avg_prcp",
+    "glacier_avg_meltingtemp"
+  ],
+  "drop_zero_variance": 0,
+  "group_by": "glacier",
+  "has_regions": true,
+  "id_col": null,
+  "base_models": [
+    "xgboost",
+    "lightgbm"
+  ],
+  "seed": 42
+}
