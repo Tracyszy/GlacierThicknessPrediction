@@ -1,0 +1,38 @@
+_snapshot_ts: '2025-09-03T01:04:01'
+artifacts:
+  save_config_snapshot: true
+  save_feature_list: true
+  save_scaler: true
+cv:
+  group_by_glacier: false
+  n_repeats: 5
+  test_size: 0.2
+  with_supervision: true
+data:
+  dir: ./output/
+  id_col: glacier_id
+  input_global_all: ./output/global_all.csv
+  input_global_clean: ./output/global_clean.csv
+  rgi_col: RGI
+  target_col: thickness
+logging:
+  experiment_name: exp_glathida_v1
+  save_dir: ./output/runs/
+models:
+  use:
+  - xgb
+  - lgb
+  - cat
+  - mlp
+optuna:
+  n_trials:
+    cat: 40
+    lgb: 40
+    mlp: 40
+    xgb: 40
+  preset: fast
+processing:
+  imputer: median_by_rgi
+  outlier_vote_k: 2
+  scaler: standard
+seed: 42
